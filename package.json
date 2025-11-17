@@ -3,7 +3,7 @@
    "displayName": "Topos VSCode Forester",
    "description": "Enhanced VSCode support for forester",
    "repository": "github:filmerjarred/topos-vscode-forester",
-   "publisher": "filmerjarred",
+   "publisher": "JarredFilmer",
    "version": "0.2.0",
    "engines": {
       "vscode": "^1.86.0"
@@ -22,7 +22,7 @@
    "contributes": {
       "commands": [
          {
-            "command": "forester.new",
+            "command": "forester.newTree",
             "title": "New Tree",
             "category": "Forester",
             "icon": "$(diff-added)"
@@ -260,6 +260,6 @@
    },
    "dependencies": {
       "@vscode/codicons": "^0.0.41",
-      "js-toml": "^1.0.0"
+      "smol-toml": "^1.5.2"
    }
 }

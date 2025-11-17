@@ -2,29 +2,41 @@
 
 # topos-vscode-forester
 
-VSCode support for [Forester](https://www.jonmsterling.com/jms-005P.xml), a tool for tending forests of evergreen notes. This extension was hard forked from [vscode-forester](https://github.com/Trebor-Huang/vscode-forester) and developed further by the [topos institute](https://topos.institute/)
+VSCode support for [Forester](https://www.jonmsterling.com/jms-005P.xml), a tool for tending forests of evergreen notes. This extension was forked from [vscode-forester](https://github.com/Trebor-Huang/vscode-forester) and developed further by the [topos institute](https://topos.institute/)
+
 
 ## Features
+
+- Navigte between trees: Ctrl+click (or Cmd+click) on tree references like `\transclude{tree-id}` to navigate to tree
+
+![navigate links](demo/link.gif)
+
 - Language highlight.
   - Use `\startverb%tex` to retain TeX highlighting (which agrees with whatever TeX language support you happen to have installed) in verbatim environments. Otherwise the verbatim part will not be highlighted.
 
 - Tree ID completion: You can type in a part of the title/ID/taxon to filter for trees. Press tabs to insert the ID (which will replace the title you entered).
 
-- Hover information: hover over a link to a tree to see it's metadata and rename the tree if desired
+![auto compleation](demo/image.png)
 
 - Automatic title hints: will automatically show the title and taxon of a tree beside a transclusion link
 
-- Tree creation: right-click on a folder and select the "New Tree..." item, which guides you in creating a new tree. Now also supports "creating and transcluding" into existing document with one command. (Hot tip: If you have text selected when you run the command, that text will be moved to the new tree.)
+![alt text](demo/hint.png)
 
-- Tree rename: Easily change the title and taxon of a tree
+- Tree creation: Quick model for adding a new tree. (Hot tip: If you have text selected when you run the command, that text will be moved to the new tree.)
 
-- Navigte between trees: Ctrl+click (or Cmd+click) on tree references like `\transclude{tree-id}` to navigate to tree
+![alt text](demo/new-tree.png)
+
+- Tree rename: Easily change the title and taxon of whatever tree is active. (Hot tip: Can also rename via hovering over the link of a tree or double clicking on the tree in the experimental table of contents)
 
 ## Experimental Features
 
 - Forest status: beta status bar item showing whether or not the forest is in a valid state
 
+![alt text](demo/status.png)
+
 - Interactive forest structure view: a new beta panel that shows the transclusion structure of a set of trees going back to the root
+
+![alt text](demo/toc.png)
 
 ## Commands
 

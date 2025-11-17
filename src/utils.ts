@@ -5,7 +5,6 @@
 import * as vscode from "vscode";
 import { readFile, access, constants } from "fs/promises";
 import { join } from "path";
-import { load } from "js-toml";
 
 /**
  * TypeScript interface for forest.toml configuration
@@ -59,7 +58,8 @@ export async function getForestConfig(): Promise<ForestConfig | null> {
 
    const content = await readFile(configPath, "utf-8");
 
-   return load(content)
+   const { parse } = await import("smol-toml");
+   return parse(content)
 }
 
 /**

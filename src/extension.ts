@@ -57,7 +57,7 @@ export async function activate(context: vscode.ExtensionContext) {
    // Register tree commands
    context.subscriptions.push(
       vscode.commands.registerCommand(
-         "forester.new",
+         "forester.newTree",
          (folder?: vscode.Uri) => newTree(folder, false)
       ),
       vscode.commands.registerCommand(
