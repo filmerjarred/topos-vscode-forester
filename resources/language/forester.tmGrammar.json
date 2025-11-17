@@ -1,0 +1,154 @@
+{
+  "scopeName": "source.forester",
+  "patterns": [
+    { "include": "#body" }
+  ],
+  "repository": {
+    "body": {
+      "patterns": [
+        { "include": "#tex" },
+        { "include": "#verbatim" },
+        { "include": "#link" },
+        {
+          "begin": "(\\\\transclude|\\\\import|\\\\export|\\\\ref)\\{",
+          "end": "\\}",
+          "patterns": [{ "include": "#body" }],
+          "contentName": "markup.underline.link.forester",
+          "beginCaptures": {
+            "1": { "name": "constant.language.forester" }
+          }
+        },
+        {
+          "begin": "(\\\\em)\\{",
+          "end": "\\}",
+          "patterns": [{ "include": "#body" }],
+          "contentName": "markup.italic.forester",
+          "beginCaptures": {
+            "1": { "name": "constant.language.forester" }
+          }
+        },
+        {
+          "begin": "(\\\\strong)\\{",
+          "end": "\\}",
+          "patterns": [{ "include": "#body" }],
+          "contentName": "markup.bold.forester",
+          "beginCaptures": {
+            "1": { "name": "constant.language.forester" }
+          }
+        },
+        {
+          "begin": "(\\\\title)\\{",
+          "end": "\\}",
+          "patterns": [{ "include": "#body" }],
+          "contentName": "markup.heading.forester",
+          "beginCaptures": {
+            "1": { "name": "constant.language.forester" }
+          }
+        },
+        {
+          "begin": "(\\\\code)\\{",
+          "end": "\\}",
+          "patterns": [{ "include": "#body" }],
+          "contentName": "markup.inline.raw.forester",
+          "beginCaptures": {
+            "1": { "name": "constant.language.forester" }
+          }
+        },
+        {
+          "begin": "#?#\\{",
+          "end": "\\}",
+          "patterns": [{ "include": "#body" }],
+          "contentName": "meta.math.forester"
+        },
+        {
+          "begin": "\\{",
+          "end": "\\}",
+          "patterns": [
+            { "include": "#text" },
+            { "include": "#body" }
+          ]
+        },
+        { "include": "#command" },
+        { "include": "#comment" }
+      ]
+    },
+    "text": {
+      "patterns": [
+        {
+          "match": "([^%#\\\\\\{\\}\\[\\]\\(\\)\\r\\n]|\\\\%|\\\\\\\\)+",
+          "name": "markup.text.forester"
+        }
+      ]
+    },
+    "tex": {
+      "begin": "(\\\\startverb)(%)(tex).*",
+      "end": "\\\\stopverb",
+      "patterns": [
+        { "include": "text.tex.latex" }
+      ],
+      "beginCaptures": {
+        "1": { "name": "constant.language.forester" },
+        "2": { "name": "punctuation.definition.comment.forester comment.line.percentage.forester" },
+        "3": { "name": "keyword.other.forester" }
+      },
+      "endCaptures": {
+        "0": { "name": "constant.language.forester" }
+      },
+      "contentName": "embedded.latex"
+    },
+    "verbatim": {
+      "begin": "\\\\startverb",
+      "end": "\\\\stopverb",
+      "contentName": "markup.raw.forester",
+      "beginCaptures": {
+        "0": { "name": "constant.language.forester" }
+      },
+      "endCaptures": {
+        "0": { "name": "constant.language.forester" }
+      }
+    },
+    "command": {
+      "patterns": [
+        {
+          "match": "\\\\[A-Za-z][0-9A-Za-z\\-/#]*",
+          "captures": {
+            "0": { "name": "constant.language.forester" }
+          }
+        },
+        {
+          "match": "\\\\<([A-Za-z][0-9A-Za-z\\-/#:]*)>",
+          "captures": {
+            "0": { "name": "constant.language.forester" },
+            "1": { "name": "support.variable.xmlns.forester" }
+          }
+        }
+      ]
+    },
+    "comment": {
+      "begin": "%",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.forester"
+        }
+      },
+      "end": "$\\n?",
+      "name": "comment.line.percentage.forester"
+    },
+    "link": {
+      "patterns": [
+        {
+          "match": "\\[([^\\[]*)\\]\\(([^\\)]*)\\)",
+          "captures": {
+            "1": { "name": "markup.text.forester" },
+            "2": { "name": "markup.underline.link.forester" }
+          }
+        },
+        {
+          "begin": "\\[\\[",
+          "end": "\\]\\]",
+          "contentName": "markup.underline.link.forester"
+        }
+      ]
+    }
+  }
+}
