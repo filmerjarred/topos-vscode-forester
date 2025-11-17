@@ -2,7 +2,7 @@
 
 # topos-vscode-forester
 
-VSCode support for [Forester](https://www.jonmsterling.com/jms-005P.xml), a tool for tending forests of evergreen notes. This extension was hard forked from [vscode-forester](https://github.com/Trebor-Huang/vscode-forester) and developed further by the (topos institute)[https://topos.institute/]
+VSCode support for [Forester](https://www.jonmsterling.com/jms-005P.xml), a tool for tending forests of evergreen notes. This extension was hard forked from [vscode-forester](https://github.com/Trebor-Huang/vscode-forester) and developed further by the [topos institute](https://topos.institute/)
 
 ## Features
 - Language highlight.
