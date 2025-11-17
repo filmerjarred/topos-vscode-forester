@@ -4,7 +4,7 @@
    "description": "Enhanced VSCode support for forester",
    "repository": "github:filmerjarred/topos-vscode-forester",
    "publisher": "JarredFilmer",
-   "version": "0.2.0",
+   "version": "0.3.0",
    "engines": {
       "vscode": "^1.86.0"
    },
