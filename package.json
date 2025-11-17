@@ -1,7 +1,7 @@
 {
    "name": "topos-vscode-forester",
    "displayName": "Topos VSCode Forester",
-   "description": "Enhanced VSCode support for forester with tree structure visualization and advanced editing features",
+   "description": "Enhanced VSCode support for forester",
    "repository": "github:filmerjarred/topos-vscode-forester",
    "publisher": "filmerjarred",
    "version": "0.2.0",
@@ -9,7 +9,7 @@
       "vscode": "^1.86.0"
    },
    "markdown": "github",
-   "icon": "resources/Forester.png",
+   "icon": "resources/ForesterTopos.png",
    "categories": [
       "Programming Languages"
    ],
@@ -260,7 +260,6 @@
    },
    "dependencies": {
       "@vscode/codicons": "^0.0.41",
-      "js-toml": "^1.0.0",
-      "vscode-languageclient": "^9.0.1"
+      "js-toml": "^1.0.0"
    }
 }

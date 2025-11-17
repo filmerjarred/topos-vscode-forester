@@ -1,16 +1,16 @@
-# vscode-forester
 
-Some basic VSCode support for [Forester](https://www.jonmsterling.com/jms-005P.xml), a tool for tending forests of evergreen notes.
 
-- ![A demonstration of the plugin's features.](demo/image.png)
+# topos-vscode-forester
+
+VSCode support for [Forester](https://www.jonmsterling.com/jms-005P.xml), a tool for tending forests of evergreen notes. This extension was hard forked from [vscode-forester](https://github.com/Trebor-Huang/vscode-forester) and developed further by the (topos institute)[https://topos.institute/]
 
 ## Features
 - Language highlight.
   - Use `\startverb%tex` to retain TeX highlighting (which agrees with whatever TeX language support you happen to have installed) in verbatim environments. Otherwise the verbatim part will not be highlighted.
 
-- Tree ID completion: **You can type in a part of the title/ID/taxon to filter for trees. Press tabs to insert the ID (which will replace the title you entered).**
+- Tree ID completion: You can type in a part of the title/ID/taxon to filter for trees. Press tabs to insert the ID (which will replace the title you entered).
 
-- Hover information: hover over a link to see it's metadata and rename the tree if desired
+- Hover information: hover over a link to a tree to see it's metadata and rename the tree if desired
 
 - Automatic title hints: will automatically show the title and taxon of a tree beside a transclusion link
 
@@ -72,20 +72,3 @@ You need forester installed, see [here](https://www.jonmsterling.com/jms-005P.xm
 }
 ```
 
-### To do
-
-- [ ] Language highlight
-  - [ ] Escapes are not quite right yet, though I'm not sure forester is doing it right either
-  - [X] ~~Embedded formula highlight~~ (pretending it's plain forester syntax is good enough)
-- [ ] Convenience features
-  - [X] Hover/Inlay hint of link titles
-  - [ ] Rename links upon tree renaming
-  - [ ] Advanced language features (this is not doable without a forester LSP)
-  - [ ] Formula preview (hard without forester LSP, since macros are evaluated by forester)
-  - [X] Shift-click to jump to file (how do we locate anything? we need more stuff for `forester query`)
-  - [X] Build on save
-    - [X] error reporting (maybe we ask forester to not include those fancy stuff in error reports)
-- [X] Improve the tree creation UX
-- [X] ~~Integrate with the edit button?~~ (it's doing fine on its own)
-
-## Known Issues
